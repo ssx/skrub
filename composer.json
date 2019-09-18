@@ -1,0 +1,19 @@
+{
+    "name": "ssx/skrub",
+    "description": "Skrub can help to clear some disk space.",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "composer-plugin-api": "1.1.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "SSX\\Package\\Skrub\\":"src/"
+        }
+    },    
+    "extra":{     
+        "class":"SSX\\Package\\Skrub\\SkrubPlugin"
+    }
+}
+
