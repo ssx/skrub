@@ -1,9 +1,16 @@
 # Skrub.
 
 Skrub is a composer plugin that will remove useless files and free up some space, 
-especally useful when keeping Docker images small.
+especially useful when trying to keep Docker images small. A lot of OSS project
+owners use .gitattributes to strip junk out but the majority don't.
 
-Usage:
+
+### Installation
+Just run `composer install ssx/skrub` and you're good to go.
+
+
+### Usage
+
 `composer skrub` will list the files Skrub feels it can safely remove and the 
 total disk space that can be regained.
 
