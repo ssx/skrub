@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of ssx/skrub
+ *
+ *  (c) Scott Robinson <scott@dor.ky>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace SSX\Package\Skrub;
 
 use RecursiveIteratorIterator;
@@ -135,7 +145,7 @@ class SkrubCommand extends \Composer\Command\BaseCommand
      *
      * @return bool|string
      */
-    function bytesToHumanReadable($bytes, $decimals = 2)
+    public function bytesToHumanReadable($bytes, $decimals = 2)
     {
         $sz = 'BKMGTP';
         $factor = floor((strlen($bytes) - 1) / 3);
