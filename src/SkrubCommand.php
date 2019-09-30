@@ -38,6 +38,8 @@ class SkrubCommand extends \Composer\Command\BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $output->writeLn(' ');
+        
         // An array of directories that we're happy to remove.
         $directories_to_remove = [ 'test', 'tests', 'fixture', 'fixtures', 'stub', 'stubs', 'docs', 'doc', 'examples',
                                            'example', 'docker', 'other' ];
