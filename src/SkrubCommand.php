@@ -41,8 +41,15 @@ class SkrubCommand extends \Composer\Command\BaseCommand
         $output->writeLn(' ');
         
         // An array of directories that we're happy to remove.
-        $directories_to_remove = [ 'test', 'tests', 'fixture', 'fixtures', 'stub', 'stubs', 'docs', 'doc', 'examples',
-                                           'example', 'docker', 'other' ];
+        $directories_to_remove = [
+            'test', 'tests',
+            'fixture', 'fixtures',
+            'stub', 'stubs',
+            'doc', 'docs',
+            'example', 'examples',
+            'docker',
+            'other'
+        ];
 
 
         // Build a path to the vendor folder.
@@ -68,7 +75,7 @@ class SkrubCommand extends \Composer\Command\BaseCommand
             $name = $path->getFileName();
 
             // Is the given path a directory? and does it match the names we have?
-            if (($path->isDir() === true) && (in_array($name, $directories_to_remove)) && (substr_count($full_path, '/') === 4)) {
+            if (($path->isDir() === true) && (in_array($name, $directories_to_remove, true)) && (substr_count($full_path, '/') === 4)) {
                 // Is the directory the 4rd level deep?
                 //
                 // ie, vendor/somedude/somepackage/Tests
@@ -109,7 +116,11 @@ class SkrubCommand extends \Composer\Command\BaseCommand
         // Perform the actual deletion of files if we're asked to.
         if ($input->getOption('perform') === true) {
             foreach ($directories_to_action as $directory) {
-                shell_exec('rm -rf '.$directory['path']);
+                if ('\\' === DIRECTORY_SEPARATOR) {
+                    shell_exec('rd /S /Q '.$directory['path']);
+                } else {
+                    shell_exec('rm -rf '.$directory['path']);
+                }
                 $output->writeLn('🗑  Deleting: '.$directory['path']. ' (saving '.$this->bytesToHumanReadable($directory['size']).')');
 
                 if (!file_exists($directory['path']) === true) {
