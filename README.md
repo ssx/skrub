@@ -6,7 +6,7 @@ owners use .gitattributes to strip junk out but the majority don't.
 
 
 ### Installation
-Just run `composer install ssx/skrub` and you're good to go.
+Just run `composer require ssx/skrub` and you're good to go.
 
 
 ### Usage
