@@ -44,7 +44,7 @@ class SkrubCommand extends \Composer\Command\BaseCommand
         $directories_to_remove = [
             'test', 'tests',
             'fixture', 'fixtures',
-            'stub', 'stubs',
+            'stub',
             'doc', 'docs',
             'example', 'examples',
             'docker',
