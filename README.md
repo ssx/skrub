@@ -17,6 +17,7 @@ total disk space that can be regained.
 Adding `--perform` to the command will actually delete the files &amp; 
 directories from your system.
 
+[![asciicast](https://asciinema.org/a/NHImku9pWOwM2EY34YZTq4RZu.svg)](https://asciinema.org/a/NHImku9pWOwM2EY34YZTq4RZu)
 
 ### Warranty, Disclaimer etc.
 
